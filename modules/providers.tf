@@ -8,7 +8,17 @@ terraform {
   }
 }
 
+data "azurerm_key_vault" "automata_kv" {
+  name                = "automata-kv"
+  resource_group_name = "automata"
+}
+
+data "azurerm_key_vault_secret" "devops_token" {
+  name         = "devops-pat-token"
+  key_vault_id = data.azurerm_key_vault.automata_kv.id
+}
+
 provider "azuredevops" {
   org_service_url       = "https://dev.azure.com/enthuzest"
-  personal_access_token = "phkdklqnplc3zez36oijbyp2vmofa3xbdvvbu6a3g2ntoi2dhufa"
+  personal_access_token = data.azurerm_key_vault_secret.devops_token.value
 }
