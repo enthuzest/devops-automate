@@ -19,18 +19,27 @@ This will be use to create devops project with azure service connection. Terrafo
 
 ### Executing program
 
-* How to run the program
-* Step-by-step bullets
 ```
 terraform login app.terraform.io
 terraform init
 terraform plan
 terraform apply/destory
 ```
+### CI/CD
+https://app.terraform.io/app/enthuzest/workspaces/workspace-azure-devops
+
+## Changes Done to Setup
+
+* SP was created for workspace with secret.
+
+* Below API Permissions granted in workspace service principal as SP is making update in another SP
+![Alt text](docs/image.png)
+
+* SP granted **Key Vault Secrets User** role to common key vault to read secret values
+
+* Workspace secret added in terraform code for authentication
 
 ## Authors
-
-Contributors names and contact info
 
 Faraz Ahmad Siddiqui 
 [@FarazAhmad](https://www.linkedin.com/in/faraz-ahmad-340001113/)
