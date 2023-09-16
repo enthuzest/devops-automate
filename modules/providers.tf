@@ -5,6 +5,10 @@ terraform {
       source  = "microsoft/azuredevops"
       version = ">=0.9.0"
     }
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "~> 3.73.0"
+    }
   }
 }
 
