@@ -1,16 +1,16 @@
 variable "project_name" {
   type        = string
-  description = "value"
+  description = "name of azure devops project"
 }
 variable "description" {
   type        = string
-  description = "value"
+  description = "description for devops project"
 }
 variable "service_principal_id" {
   type        = string
-  description = "value"
+  description = "application id of service principal used to authenticate azure"
 }
 variable "service_principal_key" {
   type        = string
-  description = "value"
+  description = "secret of service principal used to authenticate azure"
 }
