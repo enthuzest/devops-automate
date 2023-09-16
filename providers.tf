@@ -16,11 +16,6 @@ terraform {
   }
 }
 
-provider "azuredevops" {
-  org_service_url       = "https://dev.azure.com/enthuzest"
-  personal_access_token = "phkdklqnplc3zez36oijbyp2vmofa3xbdvvbu6a3g2ntoi2dhufa"
-}
-
 provider "azuread" {
   tenant_id = "523ab593-8bae-485a-bde2-5fab077a0f92"
 }
