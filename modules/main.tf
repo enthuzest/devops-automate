@@ -23,3 +23,12 @@ resource "azuredevops_serviceendpoint_azurerm" "azure_endpoint" {
   azurerm_subscription_id   = "fe790859-8eda-4568-b4d4-07fca54605e4"
   azurerm_subscription_name = "HandsOn"
 }
+
+resource "azuredevops_serviceendpoint_github" "github_endpoint" {
+  project_id            = azuredevops_project.project.id
+  service_endpoint_name = "github-sc"
+
+  auth_personal {
+    personal_access_token = var.git_pat_token
+  }
+}
