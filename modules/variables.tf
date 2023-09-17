@@ -14,3 +14,7 @@ variable "service_principal_key" {
   type        = string
   description = "secret of service principal used to authenticate azure"
 }
+variable "git_pat_token" {
+  type        = string
+  description = "github pat token"
+}
