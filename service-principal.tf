@@ -22,3 +22,15 @@ resource "azurerm_role_assignment" "sp_owner" {
   role_definition_name = "Owner"
   principal_id         = azuread_service_principal.devops.object_id
 }
+
+resource "azurerm_key_vault_secret" "arm_client_id" {
+  name         = "arm-client-id"
+  value        = azuread_application.devops.application_id
+  key_vault_id = data.azurerm_key_vault.automata_kv.id
+}
+
+resource "azurerm_key_vault_secret" "arm_client_secret" {
+  name         = "arm-client-secret"
+  value        = azuread_application_password.devops.value
+  key_vault_id = data.azurerm_key_vault.automata_kv.id
+}
